@@ -32,6 +32,7 @@ winit = { workspace = true }
 wgpu = { workspace = true }
 etagere = "0.2.13"
 glob = { workspace = true }
+ab_glyph = { workspace = true }
 
 glam = { workspace = true, features = [
     # "scalar-math" disables the 16-byte alignment requirement for some types

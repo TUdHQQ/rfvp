@@ -1,4 +1,7 @@
-use std::sync::{Arc, RwLock};
+use std::{
+    path::Path,
+    sync::{Arc, RwLock},
+};
 
 use anyhow::{Context, Result};
 use glam::Mat4;
@@ -305,9 +308,12 @@ pub async fn run(cli: Cli) {
 
     let asset_server = Arc::new(AnyAssetServer::new(asset_io.into()));
 
-    let adv_assets =
-        pollster::block_on(AdvAssets::load(&asset_server)).expect("Loading assets failed");
-    
+    let adv_assets = pollster::block_on(AdvAssets::load(
+        &asset_server,
+        cli.assets_dir.as_deref().unwrap_or(Path::new(".")),
+    ))
+    .expect("Loading assets failed");
+
     let (width, height) = adv_assets.scenario.get_screen_size();
 
     let event_loop = EventLoop::new().unwrap();

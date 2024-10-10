@@ -1,6 +1,5 @@
 mod audio;
 pub mod bustup;
-mod font;
 mod locate;
 pub mod movie;
 pub mod picture;

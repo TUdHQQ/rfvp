@@ -52,7 +52,7 @@ chrono = { version = "0.4.38", features = ["serde"] }
 
 glob = { workspace = true }
 flate2 = "1.0.33"
-ab_glyph = "0.2.28"
+ab_glyph = { workspace = true }
 
 [dev-dependencies]
 hex = "0.4.3"

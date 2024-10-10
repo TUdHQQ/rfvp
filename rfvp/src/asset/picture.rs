@@ -20,16 +20,22 @@ impl Picture {
 impl Asset for Picture {
     fn load_from_bytes(data: Vec<u8>) -> Result<Self> {
         let mut container = NvsgTexture::new();
-        container.read_texture(&buffer, |typ: TextureType| {true})?;
+        container.read_texture(&data, |_typ| true)?;
         let pic = container.get_texture(0)?;
-        let image = pic.to_rgba8()?;
+        let image = pic.to_rgba8();
 
         let picture = LazyGpuImage::new(
             image,
-            vec2(container.get_offset_x() as f32, container.get_offset_y() as f32),
+            vec2(
+                container.get_offset_x() as f32,
+                container.get_offset_y() as f32,
+            ),
             None,
         );
 
-        Ok(Self { picture, nvsg_texture })
+        Ok(Self {
+            picture,
+            nvsg_texture: container,
+        })
     }
 }

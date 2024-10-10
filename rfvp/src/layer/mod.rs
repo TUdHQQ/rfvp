@@ -30,7 +30,6 @@ use rfvp_audio::AudioManager;
 use rfvp_core::{
     format::scenario::{
         info::{BustupInfoItem, MovieInfoItem, PictureInfoItem},
-        instruction_elements::UntypedNumberArray,
         Scenario,
     },
     time::{Ticks, Tweener},

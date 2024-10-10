@@ -2,7 +2,6 @@ use std::sync::Arc;
 
 use glam::{vec2, Mat4, Vec2};
 use rfvp_core::{
-    format::font::GlyphTrait,
     layout::{
         Action, ActionType, Block, BlockExitCondition, LayoutedChar, LayoutedMessage, LayoutingMode,
     },

@@ -12,7 +12,7 @@ pub struct LAYERLOAD {
     load_task: Option<Task<UserLayer>>,
 }
 
-impl StartableCommand for command::runtime::LAYERLOAD {
+impl StartableCommand for LAYERLOAD {
     fn apply_state(&self, state: &mut VmState) {
         assert_eq!(self.leave_uninitialized, 0); // I __think__ this has to do with init props/leave them be, but I'm not sure
 
