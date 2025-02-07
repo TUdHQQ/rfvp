@@ -8,7 +8,7 @@ members = [
     "rfvp-audio",
     "rfvp",
     "assembler",
-    "disassembler",
+    "disassembler", "rfvp-script", "rfvp-rdecompiler",
 ]
 resolver = "2"
 

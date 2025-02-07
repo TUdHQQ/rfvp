@@ -1,0 +1,11 @@
+[package]
+name = "rfvp-rdecompiler"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rfvp-core = { path = "../rfvp-core" }
+
+anyhow = { workspace = true }
+log = { workspace = true }
+bytes = { workspace = true }
